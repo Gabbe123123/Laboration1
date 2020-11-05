@@ -20,9 +20,7 @@ public class Volvo240{
     public int getNrDoors(){
         return nrDoors;
     }
-    public double getEnginePower(){
-        return enginePower;
-    }
+    public double getEnginePower(){return enginePower; }
 
     public double getCurrentSpeed(){
         return currentSpeed;
@@ -32,7 +30,7 @@ public class Volvo240{
         return color;
     }
 
-    public void setColor(Color clr){
+    protected void setColor(Color clr){
 	    color = clr;
     }
 
@@ -44,7 +42,7 @@ public class Volvo240{
 	    currentSpeed = 0;
     }
     
-    public double speedFactor(){
+    protected double speedFactor(){
         return enginePower * 0.01 * trimFactor;
     }
 
