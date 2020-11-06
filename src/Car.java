@@ -1,17 +1,18 @@
 import java.awt.*; //interface ärvs aldrig ifrån, kan implimentera interface i flera klasser
 
 abstract class Car {
-    protected int nrDoors; // Number of doors on the car
-    protected double enginePower; // Engine power of the car
-    protected double currentSpeed; // The current speed of the car
-    protected Color color; // Color of the car
-    protected String modelName; // The car model name
-    protected int xCoordinate;
-    protected int yCoordinate;
+     protected int nrDoors; // Number of doors on the car
+     protected double enginePower; // Engine power of the car
+     protected double currentSpeed; // The current speed of the car
+     protected Color color; // Color of the car
+     protected String modelName; // The car model name
+     protected int xCoordinate;
+     protected int yCoordinate;
 
     public int getNrDoors(){
         return nrDoors;
     }
+
     public double getEnginePower(){return enginePower; }
 
     public double getCurrentSpeed(){
@@ -34,7 +35,7 @@ abstract class Car {
         currentSpeed = 0;
     }
 
-    protected double speedFactor(){
+    public double speedFactor(){
         return enginePower;
     }
 
