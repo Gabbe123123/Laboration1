@@ -1,6 +1,6 @@
 import java.awt.*; //interface ärvs aldrig ifrån, kan implimentera interface i flera klasser
 
-public class Car {
+abstract class Car {
     protected int nrDoors; // Number of doors on the car
     protected double enginePower; // Engine power of the car
     protected double currentSpeed; // The current speed of the car
