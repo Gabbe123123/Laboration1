@@ -1,7 +1,7 @@
 import java.awt.*;
-public class Saab95 extends Volvo240{
+public class Saab95 extends Car{
 
-    private boolean turboOn;
+    private boolean turboOn; //Objekt flesta private attribut, inte modifiera av misstag
     
     public Saab95(){
         nrDoors = 2;
@@ -10,6 +10,8 @@ public class Saab95 extends Volvo240{
 	    turboOn = false;
         modelName = "Saab95";
         stopEngine();
+        xCoordinate=0;
+        yCoordinate=0;
     }
 
     public void setTurboOn(){
@@ -48,6 +50,6 @@ public class Saab95 extends Volvo240{
 
     public static void main(String[] args){
         Saab95 s1 = new Saab95();
-        s1.getEnginePower();
+        System.out.println(s1.yCoordinate);
     }
 }
