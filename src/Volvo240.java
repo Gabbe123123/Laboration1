@@ -1,36 +1,49 @@
 import java.awt.*;
 
-public class Volvo240 extends Car {
+/**
+ * Subklassen Volvo240 ärver metoder och instansvariabler från superklassen Car
+ */
+public class Volvo240 extends Car { //Inherits from Car class
 
-    private final static double trimFactor = 1.25;
+    /**
+     * Instansvariabel unik för en Saab95
+     */
 
-    @Override
+    private final static double trimFactor = 1.25; //Unique for Volvo240
+
+    /**
+     * Volvos konstruktor
+     */
+
     public Volvo240() {
-        super(4, Color.black, "Volvo240", 100, 0, 0, 0);
+        super(4, Color.black, "Volvo240", 100, 0, 0, 0, 0);
     }
+
+    /**
+     * Skriver över speedFactor-metoden i Car med det som gäller för en Volvo
+     * @return
+     */
 
     @Override
     public double speedFactor() {
-        return enginePower * 0.01 * trimFactor;
+        return getEnginePower() * 0.01 * trimFactor;
     }
 
+    /**
+     * Skriver över incrementSpeed-metoden i Car med det som gäller för en Volvo
+     * @param amount
+     */
     @Override
     public void incrementSpeed(double amount) {
         currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
     }
 
+    /**
+     * Skriver över decrementSpeed-metoden i Car med det som gäller för en Volvo
+     * @param amount
+     */
     @Override
     public void decrementSpeed(double amount) {
         currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
-    }
-
-    // TODO fix this method according to lab pm
-    public void gas(double amount) {
-        incrementSpeed(amount);
-    }
-
-    // TODO fix this method according to lab pm
-    public void brake(double amount) {
-        decrementSpeed(amount);
     }
 }
