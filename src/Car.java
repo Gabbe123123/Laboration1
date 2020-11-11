@@ -21,9 +21,9 @@ abstract class Car implements Movable{
      * @param modelName
      * @param enginePower
      * @param currentSpeed
-     * @param xCoordinate
-     * @param yCoordinate
-     * @param angle
+     * @param xCoordinate, anger bilens x-koordinat
+     * @param yCoordinate, anger bilens y-koordinat
+     * @param angle, anger vilken riktning bilen är vänd
      */
 
     public Car(int nrDoors, Color color, String modelName, double enginePower, double currentSpeed, int xCoordinate, int yCoordinate, double angle) {
@@ -150,8 +150,8 @@ abstract class Car implements Movable{
 
     /**
      * Metod för förflyttning av bil, tar in en parameter time, alltså hur länge man rör sig i viss riktning
-     * x-koordinaten är cosinus för vinkeln som man förflyttar sig i
-     * y-koordinaten är sinus för vinkeln som man förflyttar sig i
+     * x-koordinaten är cosinus för riktningen som man förflyttar sig i
+     * y-koordinaten är sinus för riktingen som man förflyttar sig i
      * @param time
      */
     public void move(double time){
