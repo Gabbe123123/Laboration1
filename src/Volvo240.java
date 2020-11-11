@@ -33,17 +33,9 @@ public class Volvo240 extends Car { //Inherits from Car class
      * Skriver över incrementSpeed-metoden i Car med det som gäller för en Volvo
      * @param amount
      */
-    @Override
-    public void incrementSpeed(double amount) {
-        currentSpeed = Math.min(getCurrentSpeed() + speedFactor() * amount, enginePower);
-    }
 
     /**
      * Skriver över decrementSpeed-metoden i Car med det som gäller för en Volvo
      * @param amount
      */
-    @Override
-    public void decrementSpeed(double amount) {
-        currentSpeed = Math.max(getCurrentSpeed() - speedFactor() * amount, 0);
-    }
 }

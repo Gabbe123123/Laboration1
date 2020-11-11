@@ -6,8 +6,8 @@ import java.awt.*;
 
 abstract class Car implements Movable{
     private int nrDoors; //Number of doors
-    public double enginePower; // Engine power of the car
-    public double currentSpeed; // The current speed of the car
+    private double enginePower; // Engine power of the car
+    private double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     private String modelName; // The car model name
     private double xCoordinate; //The car's xCoordinate
@@ -16,9 +16,9 @@ abstract class Car implements Movable{
 
     /**
      * Konstruktor, en bils tillstånd definieras av dessa parametrar
-     * @param nrDoors
-     * @param color
-     * @param modelName
+     * @param nrDoors, antal dörrar
+     * @param color, bilens färg
+     * @param modelName, bilens modellnamn
      * @param enginePower
      * @param currentSpeed
      * @param xCoordinate, anger bilens x-koordinat
@@ -86,7 +86,7 @@ abstract class Car implements Movable{
 
     /**
      * Metod för att bestämma färg hos bil
-     * @param clr
+     * @param clr, färg man sätter på bilen
      */
     protected void setColor(Color clr) {
         color = clr;
