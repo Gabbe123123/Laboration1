@@ -3,6 +3,7 @@ import java.awt.*;
 /**
  * Subklassen Volvo240 ärver metoder och instansvariabler från superklassen Car
  */
+
 public class Volvo240 extends Car { //Inherits from Car class
 
     /**
@@ -21,7 +22,8 @@ public class Volvo240 extends Car { //Inherits from Car class
 
     /**
      * Skriver över speedFactor-metoden i Car med det som gäller för en Volvo
-     * @return
+     *
+     * @return speedFactor
      */
 
     @Override
@@ -29,13 +31,5 @@ public class Volvo240 extends Car { //Inherits from Car class
         return getEnginePower() * 0.01 * trimFactor;
     }
 
-    /**
-     * Skriver över incrementSpeed-metoden i Car med det som gäller för en Volvo
-     * @param amount
-     */
 
-    /**
-     * Skriver över decrementSpeed-metoden i Car med det som gäller för en Volvo
-     * @param amount
-     */
 }

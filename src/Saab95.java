@@ -17,7 +17,7 @@ public class Saab95 extends Car {
      */
 
     public Saab95() {
-        super(2, Color.red, "Saab95", 125, 0, 0, 0, 0);
+        super(2, Color.red, "Saab95", 125.0, 0, 0, 0, 0);
         turboOn = false;
     }
 
@@ -30,21 +30,29 @@ public class Saab95 extends Car {
 
     }
 
-    public boolean getTurbo(){
+    /**
+     *
+     * @return turboOn, alltså ifall turbo är på eller inte
+     */
+
+    public boolean getTurbo() {
         return turboOn;
     }
 
     /**
      * Metod för att stänga av turbon
      */
+
     public void setTurboOff() {
         turboOn = false;
     }
 
     /**
      * Skriver över speedFactor-metoden i Car med det som gäller för en Saab
-     * @return
+     *
+     * @return speedFactor
      */
+
     @Override
     public double speedFactor() {
         double turbo = 1;
