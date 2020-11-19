@@ -4,7 +4,7 @@ import java.awt.*;
  * Subklassen Volvo240 ärver metoder och instansvariabler från superklassen Car
  */
 
-public class Volvo240 extends Car { //Inherits from Car class
+public class Volvo240 extends Vehicle { //Inherits from Car class
 
     /**
      * Instansvariabel unik för en Saab95
@@ -17,7 +17,7 @@ public class Volvo240 extends Car { //Inherits from Car class
      */
 
     public Volvo240() {
-        super(4, Color.black, "Volvo240", 100, 0, 0, 0, 0);
+        super(4, Color.black, "Volvo240", 100, 0, 0, 0, 0, 1,1);
     }
 
     /**

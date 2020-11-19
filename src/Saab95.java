@@ -4,7 +4,7 @@ import java.awt.*;
  * Subklassen Saab95 ärver metoder och instansvariabler från superklassen Car
  */
 
-public class Saab95 extends Car {
+public class Saab95 extends Vehicle {
 
     /**
      * Instansvariabel unik för en Saab95
@@ -17,7 +17,7 @@ public class Saab95 extends Car {
      */
 
     public Saab95() {
-        super(2, Color.red, "Saab95", 125.0, 0, 0, 0, 0);
+        super(2, Color.red, "Saab95", 125.0, 0, 0, 0, 0,1.5,1);
         turboOn = false;
     }
 

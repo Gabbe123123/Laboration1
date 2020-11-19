@@ -4,7 +4,7 @@ import java.awt.*;
  * Abstrakt superklass Car som implementerar interfacet Movable
  */
 
-abstract class Car implements Movable {
+abstract class Vehicle implements Movable {
     private int nrDoors; //Number of doors
     private double enginePower; // Engine power of the car
     private double currentSpeed; // The current speed of the car
@@ -13,6 +13,8 @@ abstract class Car implements Movable {
     private double xCoordinate; //The car's xCoordinate
     private double yCoordinate; //The car's yCoordinate
     private double angle; //The direction of the car
+    private double length; //The length of the car
+    private double width; //The width of the car
 
     /**
      * Konstruktor, en bils tillstånd definieras av dessa parametrar
@@ -27,7 +29,7 @@ abstract class Car implements Movable {
      * @param angle,        anger vilken riktning bilen är vänd
      */
 
-    public Car(int nrDoors, Color color, String modelName, double enginePower, double currentSpeed, int xCoordinate, int yCoordinate, double angle) {
+    public Vehicle(int nrDoors, Color color, String modelName, double enginePower, double currentSpeed, int xCoordinate, int yCoordinate, double angle, double length, double width) {
         this.nrDoors = nrDoors;
         this.color = color;
         this.modelName = modelName;
@@ -36,10 +38,21 @@ abstract class Car implements Movable {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
         this.angle = angle;
+        this.length=length;
+        this.width=width;
         stopEngine();
+
 
 //Constructor
 
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    public double getWidth() {
+        return width;
     }
 
     /**
@@ -68,6 +81,10 @@ abstract class Car implements Movable {
      *
      * @return currentSpeed
      */
+
+    public String getModelName() {
+        return modelName;
+    }
 
     public double getCurrentSpeed() {
         return currentSpeed;
@@ -158,11 +175,22 @@ abstract class Car implements Movable {
         return xCoordinate;
     }
 
+    public double setXCoordinate(double x) {
+        return xCoordinate = x;
+    }
+
+    public double setYCoordinate(double y) {
+        return yCoordinate = y;
+    }
+
+
     /**
      * Getter-metod för ykoordinaten
      *
      * @return yCoordinate för bilen
      */
+
+
 
     public double getYCoordinate() {
         return yCoordinate;
