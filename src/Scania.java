@@ -1,17 +1,28 @@
 import java.awt.*;
 
+/**
+ * Class Scania which inherits from Vehicle and implements the interface tiltable
+ */
+
 public class Scania extends Vehicle implements Tiltable {
 
-    /**
-     * Konstruktor
-     */
 
-    private double platformAngle;
+    private double platformAngle; //The angle of the platform
+
+
+    /**
+     * Constructor for a Scania
+     */
 
     public Scania() {
         super(2, Color.white, "Scania", 770, 0, 0, 0, 0, 5, 1.5);
         platformAngle = 0;
     }
+
+    /**
+     * Speedfactor for a Scania
+     * @return 0, because a Scania has no speed factor
+     */
 
     @Override
     public double speedFactor() {
@@ -44,6 +55,10 @@ public class Scania extends Vehicle implements Tiltable {
         }
     }
 
+    /**
+     * Method to move a car for a certain time period, makes sure car cannot move if the platform has an angle
+     * @param time, the time of the movement in seconds
+     */
 
 @Override
     public void move(double time) {
@@ -63,12 +78,13 @@ if (platformAngle!=0){
     }
 }
 public static void main(String[]args){
+
         CarShop<Saab95> carShop= new CarShop<>(5);
         Saab95 s= new Saab95();
         Saab95 s2= new Saab95();
-        carShop.loadCar(s);
-       carShop.loadCar(s2);
-        System.out.println(carShop.toString());
+        Volvo240 v= new Volvo240();
+        carShop.storeCar(s);
+       carShop.storeCar(s2);
         carShop.collectCar(s);
 
 

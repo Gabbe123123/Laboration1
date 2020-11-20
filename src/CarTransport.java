@@ -1,20 +1,24 @@
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * Class car transport which inherits from super class vehicle
+ */
+
 public class CarTransport extends Vehicle  {
-    private int maxNumber;
-    //Ner platformup är false kan den lasta på bilar, annars går det ej.
-    private boolean platformUp;
-    ArrayList<Vehicle> loadedCars=new ArrayList<>(maxNumber);
+    private int maxNumber; //Maximum number of cars the shop can hold
+
+    private boolean platformUp; //Answers if the platform is uplifted or not
+
+    ArrayList<Vehicle> loadedCars=new ArrayList<>(maxNumber); //ArrayList which stores the cars in the shop
 
     /**
-     *
-     * @param maxNumber, maximum number of spots on platform
+     * Constructor for a car transport
+     * @param maxNumber, maximum number of cars the shop can hold
      */
 
-    CarTransport(int maxNumber) {
+    public CarTransport(int maxNumber) {
         super(2, Color.white, "LastbilX", 770, 0, 0, 0, 0,7,2);
-        //Ska ej kunna lasta på bilar till en början
         this.platformUp=true;
         this.maxNumber=maxNumber;
     }
@@ -28,7 +32,7 @@ public class CarTransport extends Vehicle  {
     }
 
     /**
-     * Method to set platform downright
+     * Method to set platform downright, if platform is set down the car stops, cannot set platform down if car moves
      */
 
     public void setPlatformDown() {
@@ -39,7 +43,7 @@ public class CarTransport extends Vehicle  {
     }
 
     /**
-     *
+     *Method to keep track of the state of the platform
      * @return platformUp, the state of the platform, either true (platform is up) or false (platform is down)
      */
 
@@ -55,8 +59,8 @@ public class CarTransport extends Vehicle  {
      */
 
     public void loadCar(Vehicle car) {
-        //if (!(car instanceof TruckTransport)) {
-        if (!car.equals(this) && car.getLength()<=2 && car.getWidth()<=1) {
+        //if (!(car instanceof TruckTransport)), bryter ofta mot OCP, nackdel: lägger till annan lastbil och måste ändra här i if-sats {
+        if (!car.equals(this) && car.getLength()<=2 && car.getWidth()<=1) { //Följer bättre OCP
             if ((loadedCars.size() >= maxNumber)) {
                 //Kan ej lägga till då det bara får plats 5 bilar
             }
@@ -76,12 +80,27 @@ public class CarTransport extends Vehicle  {
             }
         }
     }
+
+    /**
+     * Method to release car from platform, can only release car if a car is stored, guarantees that the platform is down before removing car
+     */
+
     public void releaseCar() {
         if(loadedCars.size()>0) {
             setPlatformDown();
             loadedCars.remove(loadedCars.get(loadedCars.size() - 1));
 
         }
+    }
+
+    /**
+     * Speedfactor for a car transport
+     * @return 0, because a car transport has no speed factor
+     */
+
+    @Override
+    public double speedFactor() {
+        return 0;
     }
 
     /**
@@ -113,10 +132,6 @@ public class CarTransport extends Vehicle  {
             }
         }
 
-    @Override
-    public double speedFactor() {
-        return 0;
-    }
 
 
 
